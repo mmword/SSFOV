@@ -120,6 +120,7 @@ half4 UnlitPassFragmentObstracle(VaryingsObstracle input) : SV_Target
 {
 	UNITY_SETUP_INSTANCE_ID(input);
 	UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
+	Alpha(SampleAlbedoAlpha(input.uv, TEXTURE2D_ARGS(_BaseMap, sampler_BaseMap)).a, _BaseColor, _Cutoff);
 	float dist = length(input.posWS-_ViewerWorldPos);
 	#if UNITY_ANY_INSTANCING_ENABLED
 	return OutputObstracle(dist,_EntityID,_SSBias.y);

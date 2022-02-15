@@ -83,6 +83,7 @@ Shader "Universal Render Pipeline/UnlitObstracle"
             // Unity defined keywords
             #pragma multi_compile_instancing
             #pragma multi_compile _ DOTS_INSTANCING_ON
+			#pragma shader_feature_local_fragment _ALPHATEST_ON
 			#pragma multi_compile _ _SSFLOATRGBA
 			#pragma multi_compile _ _ANIM
 
